@@ -2,7 +2,7 @@ package com.ddd.shortlink.admin.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.ddd.shortlink.admin.dao.entity.UserDO;
-import com.ddd.shortlink.admin.dto.UserRespDTO;
+import com.ddd.shortlink.admin.dto.resp.UserRespDTO;
 
 public interface UserService extends IService<UserDO> {
 
