@@ -10,7 +10,7 @@ import java.util.Date;
 /**
  *用户实体类
  **/
-@TableName("t_user_0")
+@TableName("t_user")
 @Data
 public class UserDO {
     private static final long serialVersionUID = 1L;
