@@ -119,6 +119,7 @@
                 <artifactId>guava</artifactId>
                 <version>${guava.version}</version>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -131,6 +132,7 @@
                 <configuration>
                     <source>17</source>
                     <target>17</target>
+                    <fork>true</fork>
                 </configuration>
             </plugin>
         </plugins>
