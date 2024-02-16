@@ -8,6 +8,8 @@ import com.ddd.shortlink.admin.common.Convention.errorcode.IErrorCode;
  **/
 public enum UserErrorCodeEnum implements IErrorCode {
 
+    USER_TOKEN_FAIL("A002000", "用户Token验证失败"),
+
     USER_NULL("b000200", "user is not exist"),
 
     USER_NAME_EXIST("b000201", "username already exists"),
