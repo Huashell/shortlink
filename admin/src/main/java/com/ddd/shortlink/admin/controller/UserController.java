@@ -3,8 +3,11 @@ package com.ddd.shortlink.admin.controller;
 import cn.hutool.core.bean.BeanUtil;
 import com.ddd.shortlink.admin.common.Convention.result.Result;
 import com.ddd.shortlink.admin.common.Convention.result.Results;
+import com.ddd.shortlink.admin.dto.req.UserLoginReqDTO;
 import com.ddd.shortlink.admin.dto.req.UserRegisterReqDTO;
+import com.ddd.shortlink.admin.dto.req.UserUpdateReqDTO;
 import com.ddd.shortlink.admin.dto.resp.UserActualRespDTO;
+import com.ddd.shortlink.admin.dto.resp.UserLoginRespDTO;
 import com.ddd.shortlink.admin.dto.resp.UserRespDTO;
 import com.ddd.shortlink.admin.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -47,4 +50,33 @@ public class UserController {
         userService.register(registerReqDTO);
         return Results.success();
     }
+    /**
+    * 用户更新数据
+    **/
+    @PutMapping("/api/short-link/v1/user")
+    public Result<Void> update(@RequestBody UserUpdateReqDTO reqDTO){
+        userService.update(reqDTO);
+        return Results.success();
+    }
+    /**
+     *
+     */
+
+    @PostMapping("/api/short-link/v1/user/login")
+    public Result<UserLoginRespDTO> login(@RequestBody UserLoginReqDTO userLoginReqDTO){
+        return Results.success(userService.login(userLoginReqDTO));
+
+    }
+
+    @GetMapping("/api/short-link/v1/user/check-login")
+    public Result<Boolean> checkLogin(@RequestParam("username") String username, @RequestParam("token") String token){
+        return Results.success(userService.checkLogin(username, token));
+    }
+
+    @DeleteMapping("/api/short-link/v1/user/logout")
+    public Result<Void> logout(@RequestParam("username") String username, @RequestParam("token") String token){
+        userService.logout(username, token);
+        return Results.success();
+    }
+
 }

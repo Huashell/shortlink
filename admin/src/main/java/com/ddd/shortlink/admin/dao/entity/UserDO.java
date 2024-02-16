@@ -56,7 +56,6 @@ public class UserDO {
      * 创建时间
      */
     @TableField(fill = FieldFill.INSERT)
-
     private Date createTime;
 
     /**
