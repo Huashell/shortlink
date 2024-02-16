@@ -1,4 +1,4 @@
-package com.ddd.shortlink.admin.service.Impl;
+package com.ddd.shortlink.admin.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.alibaba.fastjson2.JSON;
