@@ -8,6 +8,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.ddd.shortlink.admin.common.biz.user.UserContext;
 import com.ddd.shortlink.admin.dao.entity.GroupDO;
 import com.ddd.shortlink.admin.dao.mapper.GroupMapper;
+import com.ddd.shortlink.admin.dto.req.ShortLinkGroupSortReqDTO;
 import com.ddd.shortlink.admin.dto.req.ShortLinkGroupUpdateReqDTO;
 import com.ddd.shortlink.admin.dto.resp.ShortLinkGroupRespDTO;
 import com.ddd.shortlink.admin.service.GroupService;
@@ -63,6 +64,31 @@ public class GroupServiceImpl extends ServiceImpl<GroupMapper, GroupDO> implemen
                 .eq(GroupDO::getGid, requestParam.getGid())
                 .eq(GroupDO::getDelFlag, 0);
         baseMapper.update(GroupDO.builder().name(requestParam.getName()).build(), updateWrapper);
+    }
+
+    @Override
+    public void deleteGroup(String gid) {
+        LambdaUpdateWrapper<GroupDO> updateWrapper = Wrappers.lambdaUpdate(GroupDO.class)
+                .eq(GroupDO::getUsername, UserContext.getUsername())
+                .eq(GroupDO::getGid, gid)
+                .eq(GroupDO::getDelFlag, 0);
+        GroupDO groupDO = new GroupDO();
+        groupDO.setDelFlag(1);
+        baseMapper.update(groupDO, updateWrapper);
+    }
+
+    @Override
+    public void sortGroup(List<ShortLinkGroupSortReqDTO> requestParam) {
+        requestParam.forEach(each -> {
+            GroupDO groupDO = GroupDO.builder()
+                    .sortOrder(each.getSortOrder())
+                    .build();
+            LambdaUpdateWrapper<GroupDO> updateWrapper = Wrappers.lambdaUpdate(GroupDO.class)
+                    .eq(GroupDO::getUsername, UserContext.getUsername())
+                    .eq(GroupDO::getDelFlag, 0)
+                    .eq(GroupDO::getGid, each.getGid());
+            baseMapper.update(groupDO, updateWrapper);
+        });
     }
 
     private boolean hasGid(String gid){
