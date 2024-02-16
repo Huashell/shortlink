@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.ddd.shortlink.admin.common.Convention.enums.UserErrorCodeEnum;
+import com.ddd.shortlink.admin.common.enums.UserErrorCodeEnum;
 import com.ddd.shortlink.admin.common.Convention.exception.ClientException;
 import com.ddd.shortlink.admin.dao.entity.UserDO;
 import com.ddd.shortlink.admin.dao.mapper.UserMapper;

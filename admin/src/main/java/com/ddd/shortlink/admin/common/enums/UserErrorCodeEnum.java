@@ -1,4 +1,4 @@
-package com.ddd.shortlink.admin.common.Convention.enums;
+package com.ddd.shortlink.admin.common.enums;
 
 import com.ddd.shortlink.admin.common.Convention.errorcode.IErrorCode;
 
