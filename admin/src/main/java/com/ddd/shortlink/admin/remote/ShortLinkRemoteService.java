@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.ddd.shortlink.admin.common.Convention.result.Result;
 import com.ddd.shortlink.admin.remote.dto.req.ShortLinkCreateReqDTO;
 import com.ddd.shortlink.admin.remote.dto.req.ShortLinkPageReqDTO;
+import com.ddd.shortlink.admin.remote.dto.req.ShortLinkUpdateReqDTO;
 import com.ddd.shortlink.admin.remote.dto.resp.ShortLinkCreateRespDTO;
 import com.ddd.shortlink.admin.remote.dto.resp.ShortLinkGroupCountQueryRespDTO;
 import com.ddd.shortlink.admin.remote.dto.resp.ShortLinkPageRespDTO;
@@ -23,10 +24,21 @@ public interface ShortLinkRemoteService {
 
 
 
+
     default ShortLinkCreateRespDTO createShortLink(ShortLinkCreateReqDTO requestParam){
         String resultBodyStr = HttpUtil.post("http://127.0.0.1:8001/api/short-link/v1/create", JSON.toJSONString(requestParam));
         return JSON.parseObject(resultBodyStr, new TypeReference<>(){
         });
+    }
+
+
+    /**
+     * 修改短链接
+     */
+
+    default void updateShortLink(ShortLinkUpdateReqDTO requestParam) {
+        String resultBodyStr = HttpUtil.post("http://127.0.0.1:8001/api/short-link/v1/update", JSON.toJSONString(requestParam));
+        return JSON.parseObject(resultBodyStr, new TypeReference<>(){});
     }
 
     /**
@@ -52,4 +64,6 @@ public interface ShortLinkRemoteService {
         String resultPageStr = HttpUtil.get("http://127.0.0.1:8001/api/short-link/v1/count", requestMap);
         return JSON.parseObject(resultPageStr, new TypeReference<>(){});
     }
+
+
 }

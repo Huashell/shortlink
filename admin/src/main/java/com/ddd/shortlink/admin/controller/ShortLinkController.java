@@ -6,12 +6,10 @@ import com.ddd.shortlink.admin.common.Convention.result.Results;
 import com.ddd.shortlink.admin.remote.ShortLinkRemoteService;
 import com.ddd.shortlink.admin.remote.dto.req.ShortLinkCreateReqDTO;
 import com.ddd.shortlink.admin.remote.dto.req.ShortLinkPageReqDTO;
+import com.ddd.shortlink.admin.remote.dto.req.ShortLinkUpdateReqDTO;
 import com.ddd.shortlink.admin.remote.dto.resp.ShortLinkCreateRespDTO;
 import com.ddd.shortlink.admin.remote.dto.resp.ShortLinkPageRespDTO;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  *
@@ -30,6 +28,15 @@ public class ShortLinkController {
     @PostMapping("/api/short-link/v1/create")
     public Result<ShortLinkCreateRespDTO> createShortLink(@RequestBody ShortLinkCreateReqDTO requestParam) {
         return Results.success(shortLinkRemoteService.createShortLink(requestParam));
+    }
+
+    /**
+     * 修改短链接
+     */
+    @PutMapping("/api/short-link/admin/v1/update")
+    public Result<Void> updateShortLink(@RequestBody ShortLinkUpdateReqDTO requestParam){
+        ShortLinkRemoteService.updateShortLink(requestParam);
+        return Results.success();
     }
 
 
