@@ -135,6 +135,7 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
                         .eq(ShortLinkDO::getGid, requestParam.getGid())
                         .eq(ShortLinkDO::getDelFlag, 0)
                         .eq(ShortLinkDO::getEnableStatus, 0)
+                        .set(ShortLinkDO::getDescription, requestParam.getDescription())
                         .set(Objects.equals(requestParam.getValidDateType(), ValiDateTypeEnum.PERMANENT.getType()), ShortLinkDO::getValidDate, null);
 
                 baseMapper.update(shortLinkDO, updateWrapper);
