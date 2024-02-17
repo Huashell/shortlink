@@ -7,10 +7,6 @@ import lombok.Data;
  **/
 @Data
 public class ShortLinkGroupRespDTO {
-    /**
-     * id
-     */
-    private Long id;
 
     /**
      * 分组标识
@@ -22,6 +18,7 @@ public class ShortLinkGroupRespDTO {
      */
     private String name;
 
+    private Integer ShortLinkCount;
 
     /**
      * 分组排序
