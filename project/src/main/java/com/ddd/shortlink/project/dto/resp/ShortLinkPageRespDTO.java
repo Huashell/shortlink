@@ -61,7 +61,7 @@ public class ShortLinkPageRespDTO {
     /**
      * 描述
      */
-    private String describe;
+    private String description;
 
     /**
      * 网站标识
