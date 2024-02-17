@@ -15,7 +15,7 @@ import java.io.Serializable;
  */
 
 @Data
-@TableName("t_group_0")
+@TableName("t_group")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
