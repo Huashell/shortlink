@@ -9,6 +9,8 @@ import com.ddd.shortlink.project.dto.req.ShortLinkUpdateReqDTO;
 import com.ddd.shortlink.project.dto.resp.ShortLinkCreateRespDTO;
 import com.ddd.shortlink.project.dto.resp.ShortLinkGroupCountQueryRespDTO;
 import com.ddd.shortlink.project.dto.resp.ShortLinkPageRespDTO;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
 
 import java.util.List;
 
@@ -23,4 +25,6 @@ public interface ShortLinkService extends IService<ShortLinkDO> {
     List<ShortLinkGroupCountQueryRespDTO> listGroupShortLinkCount(List<String> requestParam);
 
     void updateShortLink(ShortLinkUpdateReqDTO requestParam);
+
+    void restoreUrl(String shortUri, ServletRequest request, ServletResponse response);
 }
