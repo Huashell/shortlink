@@ -1,8 +1,8 @@
 package com.ddd.shortlink.project.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.ddd.shortlink.project.common.Convention.result.Result;
-import com.ddd.shortlink.project.common.Convention.result.Results;
+import com.ddd.shortlink.project.common.convention.result.Result;
+import com.ddd.shortlink.project.common.convention.result.Results;
 import com.ddd.shortlink.project.dto.req.RecycleBinRecoverReqDTO;
 import com.ddd.shortlink.project.dto.req.RecycleBinRemoveReqDTO;
 import com.ddd.shortlink.project.dto.req.RecycleBinSaveReqDTO;
