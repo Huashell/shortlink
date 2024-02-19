@@ -1,8 +1,8 @@
 package com.ddd.shortlink.project.controller;
 
 
-import com.ddd.shortlink.project.common.Convention.result.Result;
-import com.ddd.shortlink.project.common.Convention.result.Results;
+import com.ddd.shortlink.project.common.convention.result.Result;
+import com.ddd.shortlink.project.common.convention.result.Results;
 import com.ddd.shortlink.project.service.UrlTitleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

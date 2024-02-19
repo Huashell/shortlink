@@ -1,14 +1,18 @@
 package com.ddd.shortlink.project.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.ddd.shortlink.project.common.Convention.result.Result;
-import com.ddd.shortlink.project.common.Convention.result.Results;
+import com.ddd.shortlink.project.common.convention.result.Result;
+import com.ddd.shortlink.project.common.convention.result.Results;
+import com.ddd.shortlink.project.dto.req.ShortLinkBatchCreateReqDTO;
 import com.ddd.shortlink.project.dto.req.ShortLinkCreateReqDTO;
 import com.ddd.shortlink.project.dto.req.ShortLinkPageReqDTO;
 import com.ddd.shortlink.project.dto.req.ShortLinkUpdateReqDTO;
+import com.ddd.shortlink.project.dto.resp.ShortLinkBatchCreateRespDTO;
 import com.ddd.shortlink.project.dto.resp.ShortLinkCreateRespDTO;
 import com.ddd.shortlink.project.dto.resp.ShortLinkGroupCountQueryRespDTO;
 import com.ddd.shortlink.project.dto.resp.ShortLinkPageRespDTO;
+import com.ddd.shortlink.project.handler.CustomBlockHandler;
 import com.ddd.shortlink.project.service.ShortLinkService;
 import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
@@ -40,9 +44,22 @@ public class ShortLinkController {
     /**
      * 创建短链接
      */
+    @SentinelResource(
+            value = "create_short-link",
+            blockHandler = "createShortLinkBlockHandlerMethod",
+            blockHandlerClass = CustomBlockHandler.class
+    )
     @PostMapping("/api/short-link/v1/create")
     public Result<ShortLinkCreateRespDTO> createShortLink(@RequestBody ShortLinkCreateReqDTO requestParam) {
         return Results.success(shortLinkService.createShortLink(requestParam));
+    }
+
+    /**
+     * 批量创建短链接
+     */
+    @PostMapping("/api/short-link/v1/create/batch")
+    public Result<ShortLinkBatchCreateRespDTO> batchCreateShortLink(@RequestBody ShortLinkBatchCreateReqDTO requestParam) {
+        return Results.success(shortLinkService.batchCreateShortLink(requestParam));
     }
 
     /**
