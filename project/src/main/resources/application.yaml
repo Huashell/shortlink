@@ -19,6 +19,8 @@ spring:
       host: 127.0.0.1
       port: 6379
       password: 123456
+      channel-topic:
+        short-link
 
   devtools:
     restart:
@@ -34,7 +36,7 @@ short-link:
   goto-domain:
     white-list:
       enable: true
-      names: '拿个offer,知乎,掘金,博客园'
+      names: '知乎,掘金,博客园'
       details:
         - nageoffer.com
         - zhihu.com
