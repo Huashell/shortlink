@@ -1,7 +1,7 @@
-package com.ddd.shortlink.project.common.Convention.exception;
+package com.ddd.shortlink.project.common.convention.exception;
 
 
-import com.ddd.shortlink.project.common.Convention.errorcode.IErrorCode;
+import com.ddd.shortlink.project.common.convention.errorcode.IErrorCode;
 import lombok.Getter;
 import org.springframework.util.StringUtils;
 

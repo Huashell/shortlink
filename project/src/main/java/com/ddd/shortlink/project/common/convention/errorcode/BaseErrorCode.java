@@ -1,4 +1,4 @@
-package com.ddd.shortlink.project.common.Convention.errorcode;
+package com.ddd.shortlink.project.common.convention.errorcode;
 
 /**
  * 基础错误码定义
