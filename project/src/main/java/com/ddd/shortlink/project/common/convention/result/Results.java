@@ -1,8 +1,8 @@
-package com.ddd.shortlink.project.common.Convention.result;
+package com.ddd.shortlink.project.common.convention.result;
 
 
-import com.ddd.shortlink.project.common.Convention.errorcode.BaseErrorCode;
-import com.ddd.shortlink.project.common.Convention.exception.AbstractException;
+import com.ddd.shortlink.project.common.convention.errorcode.BaseErrorCode;
+import com.ddd.shortlink.project.common.convention.exception.AbstractException;
 
 import java.util.Optional;
 

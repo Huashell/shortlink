@@ -1,8 +1,8 @@
-package com.ddd.shortlink.project.common.Convention.exception;
+package com.ddd.shortlink.project.common.convention.exception;
 
 
-import com.ddd.shortlink.project.common.Convention.errorcode.BaseErrorCode;
-import com.ddd.shortlink.project.common.Convention.errorcode.IErrorCode;
+import com.ddd.shortlink.project.common.convention.errorcode.BaseErrorCode;
+import com.ddd.shortlink.project.common.convention.errorcode.IErrorCode;
 
 /**
  * 远程服务调用异常

@@ -1,4 +1,4 @@
-package com.ddd.shortlink.project.common.Convention.result;
+package com.ddd.shortlink.project.common.convention.result;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

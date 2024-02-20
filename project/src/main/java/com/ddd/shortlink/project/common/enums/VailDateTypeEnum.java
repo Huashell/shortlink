@@ -8,7 +8,7 @@ import lombok.RequiredArgsConstructor;
  **/
 
 @RequiredArgsConstructor
-public enum ValiDateTypeEnum {
+public enum VailDateTypeEnum {
 
 
     /**
